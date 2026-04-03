@@ -20,6 +20,8 @@ namespace Predven
         FrmVentas Ventas;
         Productos Productos;
         FrmProveedores Proveedores;
+        FrmReporte Reportes;
+        public string usuario;
 
         private void btnVentas_Click(object sender, EventArgs e)
         {
@@ -65,6 +67,50 @@ namespace Predven
             Ayuda = new FrmAyuda();
             Ayuda.Show();
             this.Hide();
+        }
+
+        private void btnReportes_Click(object sender, EventArgs e)
+        {
+            Reportes = new FrmReporte();
+            Reportes.Show();
+            this.Hide();    
+
+        }
+
+        private void Principal_Load(object sender, EventArgs e)
+        {
+            panelMenu.Left = (this.ClientSize.Width - panelMenu.Width) / 2;
+            panelMenu.Top = (this.ClientSize.Height - panelMenu.Height) / 2;
+
+   
+            btnVentas.FlatAppearance.MouseOverBackColor = Color.DodgerBlue;
+            btnProductos.FlatAppearance.MouseOverBackColor = Color.DodgerBlue;
+            btnProveedores.FlatAppearance.MouseOverBackColor = Color.DodgerBlue;
+            btnGraficas.FlatAppearance.MouseOverBackColor = Color.DodgerBlue;
+            btnReportes.FlatAppearance.MouseOverBackColor = Color.DodgerBlue;
+            btnPrediccion.FlatAppearance.MouseOverBackColor = Color.DodgerBlue;
+            btnAyuda.FlatAppearance.MouseOverBackColor = Color.DodgerBlue;
+
+            lblBienvenida.Text = $"Bienvenido 👋 {usuario}";
+
+            btnVentas.FlatAppearance.MouseOverBackColor = Color.DodgerBlue;
+            btnProductos.FlatAppearance.MouseOverBackColor = Color.DodgerBlue;
+            btnProveedores.FlatAppearance.MouseOverBackColor = Color.DodgerBlue;
+            btnGraficas.FlatAppearance.MouseOverBackColor = Color.DodgerBlue;
+            btnReportes.FlatAppearance.MouseOverBackColor = Color.DodgerBlue;
+            btnPrediccion.FlatAppearance.MouseOverBackColor = Color.DodgerBlue;
+            btnAyuda.FlatAppearance.MouseOverBackColor = Color.Gray;
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void Principal_Resize(object sender, EventArgs e)
+        {
+            panelMenu.Left = (this.ClientSize.Width - panelMenu.Width) / 2;
+            panelMenu.Top = (this.ClientSize.Height - panelMenu.Height) / 2;
         }
     }
 }

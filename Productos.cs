@@ -307,5 +307,10 @@ namespace Predven
                 btnEditarP.Enabled = true;
             }
         }
+
+        private void txtPrecioCP_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

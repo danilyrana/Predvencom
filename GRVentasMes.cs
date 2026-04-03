@@ -32,28 +32,17 @@ namespace Predven
 
             chart1.Series.Clear();
 
-            chart1.Series.Add("Ventas");
-            chart1.Series["Ventas"].ChartType = SeriesChartType.Line;
-            chart1.Series["Ventas"].BorderWidth = 3;
-            chart1.Series["Ventas"].Color = Color.DarkGreen;
-
-            chart1.Series["Ventas"].XValueMember = "Mes";
-            chart1.Series["Ventas"].YValueMembers = "TotalVentas";
-
-            chart1.Series["Ventas"].IsValueShownAsLabel = true;
+            var serie = chart1.Series.Add("Ventas");
+            serie.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Column;
+            serie.Color = System.Drawing.Color.SteelBlue;
+            serie.IsValueShownAsLabel = true;
 
             chart1.DataSource = dt;
+            serie.XValueMember = "Mes";
+            serie.YValueMembers = "TotalVentas";
+
             chart1.DataBind();
 
-            chart1.ChartAreas[0].AxisX.Interval = 1;
-
-            chart1.ChartAreas[0].AxisX.MajorGrid.Enabled = false;
-            chart1.ChartAreas[0].AxisY.MajorGrid.Enabled = false;
-
-            chart1.Titles.Clear();
-            chart1.Titles.Add("Ventas por Mes (Año Actual)");
-
-            chart1.Legends[0].Docking = Docking.Top;
 
         }
         FrmGraficas Graficas;

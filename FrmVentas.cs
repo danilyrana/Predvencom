@@ -181,6 +181,9 @@ namespace Predven
 
             txtCódigo.Focus();
             lblTotal.Text = "0.00";
+
+            lblVen.Left = (this.ClientSize.Width - lblVen.Width) / 2;
+           
         }
 
         private void txtNombre_TextChanged(object sender, EventArgs e)
@@ -250,6 +253,19 @@ namespace Predven
                     MessageBox.Show("Error al buscar el cliente: " + ex.Message);
                 }
             }
+        }
+
+        private void btnMenuV_Click(object sender, EventArgs e)
+        {
+            Principal Inicio = new Principal();
+            Inicio.Show();
+            this.Hide();
+            
+        }
+
+        private void FrmVentas_Resize(object sender, EventArgs e)
+        {
+         
         }
     }
 }

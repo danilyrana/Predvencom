@@ -26,6 +26,8 @@ namespace Predven
             totalVenta = total;
         }
 
+        FrmVentas Ventas = new FrmVentas(); 
+
         private void button3_Click(object sender, EventArgs e)
         {
 
@@ -131,6 +133,17 @@ namespace Predven
         {
             VentaConfirmada = false;
             this.Close();
+        }
+
+        private void txtReferenciaTarjeta_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnCancelar_Click_1(object sender, EventArgs e)
+        {
+            Ventas.Show();
+            this.Hide();
         }
     }
 }
